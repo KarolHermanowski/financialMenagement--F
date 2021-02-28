@@ -63,7 +63,7 @@ const watch = cb => {
         usePolling: true
     }, gulp.series(css, img));
     gulp.watch('src/*.html').on('change', gulp.series(html, htmlReload, img));
-    gulp.watch('src/js/**/*.js').on('change', gulp.series(js, img));
+    gulp.watch('./src/js/**/*.js').on('change', gulp.series(js, img));
     cb();
 }
 

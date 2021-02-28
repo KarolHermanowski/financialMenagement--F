@@ -1,0 +1,107 @@
+@import 'colors';
+
+.form {
+    margin-top: 60px;
+    overflow:hidden;
+    width: 100%;
+
+    &__group {
+        box-sizing: border-box;
+        margin-top: 20px;
+        width: 100%;
+        height: 75px;
+
+        font-size: 26px;
+        display: grid;
+        color: $fontColor-2;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border-bottom: solid 1px $fontColor-2;
+        cursor: pointer;
+        transition: color .2s ease;
+
+
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-bottom: 1px solid $fontColor-1;
+            transform: translateX(-100%);
+            transition: transform .2s ease;
+        }
+
+        &--focused::before {
+            transform: translateX(0);
+
+        }
+
+        &:hover{
+            color: $fontColor-1;
+        }
+
+    }
+
+    &__label {
+        width: 100%;
+        position: absolute;
+        margin-bottom: 20px;
+        bottom: 0;
+        font-size: 26px;
+        padding-left: 10px;
+        text-align: left;
+        transition: transform .2s ease,
+        font-size .2s ease;
+        cursor: pointer;
+
+        &--focused {
+            transform: translateY(-40px);
+            font-size: 18px;
+            color: $fontColor-1;
+        }
+
+    }
+
+    &__textbox {
+        box-sizing: border-box;
+        background: none;
+        border: none;
+        font-size: 26px;
+        width: 100%;
+        height: 100%;
+        padding-left: 10px;
+        z-index: 1;
+        color: $fontColor-3;
+        cursor: pointer;
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    @import 'button';
+
+    .text{
+        width: 100%;
+        text-align: left;
+        color: $fontColor-4;
+
+        .link{
+            color: $fontColor-3;
+            opacity: 0.7;
+            transition: color .2s ease;
+
+            &:visited{
+                color: $fontColor-3;
+            }
+
+            &:hover{
+                color: $fontColor-1;
+            }
+
+        }
+    }
+}

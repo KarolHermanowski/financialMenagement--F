@@ -9,8 +9,10 @@
     padding: 30px 145px 0 145px;
 
     .title{
-        color: $fontColor-1;
+        color: $fontColor-4;
+        opacity: 0.7;
         font-size: 32px;
         width: 100%;
     }
+    @import 'form';
 }
