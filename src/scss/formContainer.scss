@@ -1,0 +1,16 @@
+@import 'colors';
+@import 'fonts';
+.form-container{
+    width: 800px;
+    height: 600px;
+    background-color: $backgroundColor-1;
+    font-family: $font-1;
+    box-sizing: border-box;
+    padding: 30px 145px 0 145px;
+
+    .title{
+        color: $fontColor-1;
+        font-size: 32px;
+        width: 100%;
+    }
+}

@@ -9,7 +9,7 @@ const merge = require('merge-stream');
 const server = cb => {
     browserSync.init({
         server: {
-            baseDir: './dist/html'
+            baseDir: './dist'
         },
         notify: false,
         open: true
@@ -42,7 +42,7 @@ const js = cb => {
 
 const html = () => {
 return merge([
-    gulp.src('./src/html/**/*.html').pipe(gulp.dest('dist/html')),
+    gulp.src('./src/index.html').pipe(gulp.dest('dist')),
 ]);
 };
 
@@ -62,7 +62,7 @@ const watch = cb => {
     gulp.watch("src/scss/**/*.scss", {
         usePolling: true
     }, gulp.series(css, img));
-    gulp.watch('src/html/**/*.html').on('change', gulp.series(html, htmlReload, img));
+    gulp.watch('src/*.html').on('change', gulp.series(html, htmlReload, img));
     gulp.watch('src/js/**/*.js').on('change', gulp.series(js, img));
     cb();
 }
